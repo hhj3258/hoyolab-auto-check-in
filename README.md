@@ -33,6 +33,8 @@ To manage the schedule later, run `schedule.bat`.
 
 > HoyoLab resets at UTC+8 midnight (01:00 KST). A run time of 01:05 KST or later is recommended.
 
+**To verify registration:** `Win + S` → search "Task Scheduler" → Task Scheduler Library → look for **ZZZ HoyoLab 출석체크**
+
 ---
 
 ## File Structure

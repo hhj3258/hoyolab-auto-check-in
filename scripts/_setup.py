@@ -65,7 +65,7 @@ if importlib.util.find_spec("playwright") is not None:
 else:
     print(t["setup_playwright_installing"])
     r = subprocess.run(
-        [sys.executable, "-m", "pip", "install", "--prefer-binary", "playwright"],
+        [sys.executable, "-m", "pip", "install", "--prefer-binary", "--disable-pip-version-check", "playwright"],
         check=False,
     )
     if r.returncode != 0:
@@ -93,7 +93,8 @@ else:
 # ── 완료 ──────────────────────────────────────────
 print()
 print("=" * 50)
-print(f"  {t['setup_all_done']}")
+if PAUSE:
+    print(f"  {t['setup_all_done']}")
 print("=" * 50)
 if PAUSE:
     input(t["press_enter_to_exit"])

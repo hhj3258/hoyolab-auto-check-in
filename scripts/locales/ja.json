@@ -58,7 +58,7 @@
 
   "connecting":     "[接続] 出席チェックページに移動中...",
   "page_fail":      "[エラー] ページ読み込み失敗 — {err}",
-  "status":         "[状態] {text}",
+  "status":         "[状態] 今月の出席チェック {count}回 完了",
   "date_today":     "[日付] 今日 (UTC+8): {day}日目",
   "already_done":   "[通知] {day}日目の出席チェックはすでに完了しています！",
   "executing":      "[実行] {day}日目のボタンをクリック中...",

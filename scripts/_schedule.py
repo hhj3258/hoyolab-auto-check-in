@@ -26,7 +26,8 @@ def _load_locale() -> dict:
     with (SCRIPTS_DIR / "locales" / f"{lang}.json").open(encoding="utf-8") as f:
         return json.load(f)
 
-t = _load_locale()
+t     = _load_locale()
+PAUSE = "--no-pause" not in sys.argv
 
 
 def query_task() -> subprocess.CompletedProcess:
@@ -120,7 +121,8 @@ if r.returncode == 0:
     ans = input(t["sched_change_time_ask"]).strip().lower()
     if ans != "y":
         print(t["sched_cancelled"])
-        input(t["press_enter_to_exit"])
+        if PAUSE:
+            input(t["press_enter_to_exit"])
         sys.exit(0)
     print()
 
@@ -135,9 +137,11 @@ else:
         datetime.strptime(time_str, "%H:%M")
     except ValueError:
         print(t["sched_err_invalid_time"].format(time=time_str))
-        input(t["press_enter_to_exit"])
+        if PAUSE:
+            input(t["press_enter_to_exit"])
         sys.exit(1)
 
 print()
 register_task(time_str)
-input(t["press_enter_to_exit"])
+if PAUSE:
+    input(t["press_enter_to_exit"])

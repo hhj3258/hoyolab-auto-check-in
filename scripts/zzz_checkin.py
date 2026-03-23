@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """젠레스 존 제로 HoyoLab 자동 출석체크"""
 
-import asyncio, json, os, subprocess, sys
+import asyncio, json, os, re, subprocess, sys
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 
@@ -119,7 +119,7 @@ def offer_scheduler(t: dict) -> None:
         SCHED_FILE.touch()
         return
 
-    subprocess.run([sys.executable, str(SCRIPTS_DIR / "_schedule.py")])
+    subprocess.run([sys.executable, str(SCRIPTS_DIR / "_schedule.py"), "--no-pause"])
     SCHED_FILE.touch()
     print()
 
@@ -248,7 +248,9 @@ async def do_checkin(t: dict, headless: bool) -> bool:
         count_text = await page.locator(
             "p:has-text('이번 달 출석 체크')"
         ).first.text_content()
-        print(t["status"].format(text=count_text.strip()))
+        match = re.search(r"\d+", count_text or "")
+        count = match.group() if match else "?"
+        print(t["status"].format(count=count))
         print(t["date_today"].format(day=today))
 
         day_loc = page.get_by_text(f"{today}일 차", exact=True).first

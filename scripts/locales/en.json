@@ -58,7 +58,7 @@
 
   "connecting":     "[Connect] Navigating to check-in page...",
   "page_fail":      "[Error] Page load failed — {err}",
-  "status":         "[Status] {text}",
+  "status":         "[Status] {count} check-in(s) completed this month",
   "date_today":     "[Date] Today (UTC+8): Day {day}",
   "already_done":   "[Notice] Day {day} check-in already completed!",
   "executing":      "[Run] Clicking Day {day} button...",

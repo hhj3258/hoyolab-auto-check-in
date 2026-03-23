@@ -58,7 +58,7 @@
 
   "connecting":     "[접속] 출석체크 페이지로 이동 중...",
   "page_fail":      "[오류] 페이지 로딩 실패 — {err}",
-  "status":         "[상태] {text}",
+  "status":         "[상태] 이번 달 출석 체크 {count}회 완료",
   "date_today":     "[날짜] UTC+8 기준 오늘: {day}일 차",
   "already_done":   "[알림] {day}일 차 출석체크는 이미 완료되어 있습니다!",
   "executing":      "[실행] {day}일 차 버튼 클릭...",

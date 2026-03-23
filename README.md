@@ -29,7 +29,6 @@ Automated HoyoLab daily check-in script for Zenless Zone Zero.
 ## Task Scheduler
 
 On first run, you will be asked whether to register a daily scheduled task.
-
 To manage the schedule later, run `schedule.bat`.
 
 > HoyoLab resets at UTC+8 midnight (01:00 KST). A run time of 01:05 KST or later is recommended.
@@ -53,19 +52,14 @@ To manage the schedule later, run `schedule.bat`.
 ## How It Works
 
 ### Browser Automation
-
 Uses [Playwright](https://playwright.dev/python/) to drive a Chromium browser in headless mode.
-
 The login session is saved locally so that logging in is only required once.
 
 ### Login Detection
-
 After the browser opens, the script waits for login to complete.
-
 Once detected, the session is saved and the browser closes automatically.
 
 ### Check-in
-
 1. Opens the ZZZ HoyoLab check-in page
 2. Determines today's date based on HoyoLab server time (UTC+8)
 3. Scrolls to today's reward card if needed
@@ -73,7 +67,6 @@ Once detected, the session is saved and the browser closes automatically.
 5. Clicks the card and confirms the check-in was successful
 
 ### Session Expiry
-
 If the saved session has expired, the browser opens automatically for re-login, then the check-in is retried.
 
 ---

@@ -3,7 +3,7 @@
   "setup_done":     "[完了] インストール完了。再起動します...",
   "setup_fail":     "[エラー] インストールに失敗しました。_setup.py を直接実行してください。",
 
-  "setup_header":                     "ZZZ HoyoLab 自動出席チェック - 初期設定",
+  "setup_header":                     "HoyoLab 自動出席チェック - 初期設定",
   "setup_label_python_path":          "Pythonパス",
   "setup_label_python_version":       "Pythonバージョン",
   "setup_err_python_too_old":         "Python 3.8以上が必要です。(現在: {ver})",
@@ -23,7 +23,7 @@
   "setup_err_prefix":                 "[エラー]",
   "setup_download_label":             "ダウンロード",
 
-  "sched_header":                     "ZZZ HoyoLab 出席チェック - タスクスケジューラ登録",
+  "sched_header":                     "HoyoLab 出席チェック - タスクスケジューラ登録",
   "sched_menu_description":           "毎日自動的に出席チェックを実行するようタスクスケジューラに登録します。",
   "sched_menu_status_registered":     "現在の状態: [登録済み]",
   "sched_menu_status_not_registered": "現在の状態: [未登録]",
@@ -43,8 +43,19 @@
 
   "press_enter_to_exit":              "\nEnterキーを押して終了...",
 
-  "title":          "ゼンレスゾーンゼロ 自動出席チェック",
+  "title":          "HoyoLab 自動出席チェック",
   "run_time":       "実行時刻",
+
+  "game_select_title":   "チェックインするゲームを選択してください",
+  "game_name_zzz":       "ゼンレスゾーンゼロ",
+  "game_name_hkrpg":     "崩壊：スターレイル",
+  "game_name_genshin":   "原神",
+  "game_name_nxx":       "未解決事件簿",
+  "game_name_bh3":       "崩壊3rd",
+  "game_select_all":     "すべて選択/解除",
+  "game_select_nav":     "↑↓ 移動  |  Enter トグル/確定",
+  "game_select_confirm": "完了",
+  "game_checkin_start":  "\n── {name} ──────────────────────────",
 
   "sched_ask":         "タスクスケジューラに毎日の自動実行を登録しますか？ (y/N): ",
   "sched_default_ask": "デフォルト時刻(01:05)で登録しますか？ (Y/n): ",
@@ -60,10 +71,11 @@
   "page_fail":      "[エラー] ページ読み込み失敗 — {err}",
   "status":         "[状態] 今月の出席チェック {count}回 完了",
   "date_today":     "[日付] 今日 (UTC+8): {day}日目",
-  "already_done":   "[通知] {day}日目の出席チェックはすでに完了しています！",
+  "already_done":   "[通知] 本日の出席チェックはすでに完了しています！",
   "executing":      "[実行] {day}日目のボタンをクリック中...",
   "btn_not_found":  "[エラー] {day}日目のボタンが見つかりません。",
   "check_success":  "[成功] 出席チェック完了！",
+  "check_no_account": "[通知] ゲームアカウントが連携されていないため、スキップします。",
   "check_fail":     "[失敗] 出席チェックが完了しませんでした。\n       原因: クリック後に完了シグナルなし (サーバーエラーまたはネットワーク問題)",
 
   "login_guide1":   "[案内] ブラウザが開きます。HoyoLabにログインしてください。",
@@ -78,7 +90,7 @@
 
   "session_exp":    "\n[セッション] {err}",
   "relogin":        "[再ログイン] ブラウザを開いて再ログインします...",
-  "retry_vis":      "\n[再試行] ブラウザを開いて再試行します...",
+  "retry_bg":       "[再試行] バックグラウンドで再試行します... ({n}/3)",
   "final_fail":     "  [最終失敗] 出席チェックを完了できませんでした。\n  考えられる原因:\n    1. ネットワーク → インターネット接続を確認\n    2. サーバーエラー → しばらくして手動で再実行",
 
   "interrupted":    "\n[中断] ユーザーによって中断されました。",

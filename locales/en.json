@@ -3,7 +3,7 @@
   "setup_done":     "[Done] Installation complete. Restarting...",
   "setup_fail":     "[Error] Installation failed. Please run _setup.py manually.",
 
-  "setup_header":                     "ZZZ HoyoLab Auto Check-in - Setup",
+  "setup_header":                     "HoyoLab Auto Check-in - Setup",
   "setup_label_python_path":          "Python path",
   "setup_label_python_version":       "Python version",
   "setup_err_python_too_old":         "Python 3.8 or higher is required. (current: {ver})",
@@ -23,7 +23,7 @@
   "setup_err_prefix":                 "[Error]",
   "setup_download_label":             "Download",
 
-  "sched_header":                     "ZZZ HoyoLab Check-in - Task Scheduler Registration",
+  "sched_header":                     "HoyoLab Check-in - Task Scheduler Registration",
   "sched_menu_description":           "Registers a Windows Task Scheduler entry to run the check-in automatically every day.",
   "sched_menu_status_registered":     "Status: [Registered]",
   "sched_menu_status_not_registered": "Status: [Not registered]",
@@ -43,8 +43,19 @@
 
   "press_enter_to_exit":              "\nPress Enter to exit...",
 
-  "title":          "Zenless Zone Zero Auto Check-in",
+  "title":          "HoyoLab Auto Check-in",
   "run_time":       "Run time",
+
+  "game_select_title":   "Select games to check in",
+  "game_name_zzz":       "Zenless Zone Zero",
+  "game_name_hkrpg":     "Honkai: Star Rail",
+  "game_name_genshin":   "Genshin Impact",
+  "game_name_nxx":       "Tears of Themis",
+  "game_name_bh3":       "Honkai Impact 3rd",
+  "game_select_all":     "Select / Deselect All",
+  "game_select_nav":     "↑↓ Move  |  Enter Toggle/Confirm",
+  "game_select_confirm": "Confirm",
+  "game_checkin_start":  "\n── {name} ──────────────────────────",
 
   "sched_ask":         "Register daily auto-run in Task Scheduler? (y/N): ",
   "sched_default_ask": "Use default time (01:05)? (Y/n): ",
@@ -60,10 +71,11 @@
   "page_fail":      "[Error] Page load failed — {err}",
   "status":         "[Status] {count} check-in(s) completed this month",
   "date_today":     "[Date] Today (UTC+8): Day {day}",
-  "already_done":   "[Notice] Day {day} check-in already completed!",
+  "already_done":   "[Notice] Today's check-in is already complete!",
   "executing":      "[Run] Clicking Day {day} button...",
   "btn_not_found":  "[Error] Day {day} button not found.",
   "check_success":  "[Success] Check-in complete!",
+  "check_no_account": "[Notice] No game account linked — skipping check-in.",
   "check_fail":     "[Fail] Check-in did not complete.\n       Reason: No completion signal after click (server error or network issue)",
 
   "login_guide1":   "[Info] Browser opening. Please log in to HoyoLab.",
@@ -78,7 +90,7 @@
 
   "session_exp":    "\n[Session] {err}",
   "relogin":        "[Relogin] Opening browser to log in again...",
-  "retry_vis":      "\n[Retry] Opening browser to retry...",
+  "retry_bg":       "[Retry] Retrying in background... ({n}/3)",
   "final_fail":     "  [Final Failure] Could not complete check-in.\n  Possible causes:\n    1. Network     → Check internet connection\n    2. Server error → Retry manually later",
 
   "interrupted":    "\n[Stopped] Interrupted by user.",

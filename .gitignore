@@ -3,6 +3,7 @@ data/browser_profile/
 data/.logged_in
 data/.lang
 data/.sched_asked
+data/.games
 .playwright-mcp/
 scripts/__pycache__/
 *.pyc

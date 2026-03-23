@@ -8,5 +8,5 @@ if %errorlevel% neq 0 (
     pause
     exit /b 1
 )
-python "%~dp0scripts\zzz_checkin.py"
+python "%~dp0scripts\checkin.py"
 pause

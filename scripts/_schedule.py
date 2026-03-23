@@ -13,7 +13,7 @@ SCRIPTS_DIR = Path(__file__).parent
 ROOT_DIR    = SCRIPTS_DIR.parent
 RUN_BAT     = ROOT_DIR / "run.bat"
 LANG_FILE   = ROOT_DIR / "data" / ".lang"
-TASK_NAME   = "ZZZ HoyoLab 출석체크"
+TASK_NAME   = "HoyoLab 출석체크"
 
 
 def _load_locale() -> dict:

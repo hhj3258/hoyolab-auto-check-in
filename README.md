@@ -1,6 +1,6 @@
-# ZZZ HoyoLab Auto Check-in
+# HoyoLab Auto Check-in
 
-Automated HoyoLab daily check-in script for Zenless Zone Zero.
+Automated HoyoLab daily check-in script supporting Zenless Zone Zero, Honkai: Star Rail, Genshin Impact, Tears of Themis, and Honkai Impact 3rd.
 
 **Language:** English | [한국어](README.ko.md)
 
@@ -20,6 +20,7 @@ Automated HoyoLab daily check-in script for Zenless Zone Zero.
 1. Run `run.bat`
 2. First run only:
    - Select language (Korean / English / Japanese)
+   - Select games to check in
    - Missing dependencies are installed automatically
    - A browser window opens — log in to HoyoLab manually
 3. From the second run onwards, check-in is performed silently in the background
@@ -33,7 +34,7 @@ To manage the schedule later, run `schedule.bat`.
 
 > HoyoLab resets at UTC+8 midnight (01:00 KST). A run time of 01:05 KST or later is recommended.
 
-**To verify registration:** `Win + S` → search "Task Scheduler" → Task Scheduler Library → look for **ZZZ HoyoLab 출석체크**
+**To verify registration:** `Win + S` → search "Task Scheduler" → Task Scheduler Library → look for **HoyoLab 출석체크**
 
 ---
 
@@ -44,7 +45,7 @@ To manage the schedule later, run `schedule.bat`.
 ├── schedule.bat          # Task scheduler management
 ├── locales/              # Locale strings (ko / en / ja)
 └── scripts/
-    ├── zzz_checkin.py    # Main script
+    ├── checkin.py        # Main script
     ├── _setup.py         # Dependency installer
     └── _schedule.py      # Task scheduler registration / removal
 ```
@@ -62,7 +63,7 @@ After the browser opens, the script waits for login to complete.
 Once detected, the session is saved and the browser closes automatically.
 
 ### Check-in
-1. Opens the ZZZ HoyoLab check-in page
+1. Opens the HoyoLab check-in page for each selected game
 2. Determines today's date based on HoyoLab server time (UTC+8)
 3. Scrolls to today's reward card if needed
 4. Exits immediately if today's check-in is already done
@@ -87,6 +88,7 @@ If the saved session has expired, the browser opens automatically for re-login, 
 
 ---
 
-## Changing Language
+## Changing Settings
 
 Delete `data/.lang` and the language selection prompt will appear on the next run.
+Delete `data/.games` and the game selection prompt will appear on the next run.

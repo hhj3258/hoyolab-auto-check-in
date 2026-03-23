@@ -3,7 +3,7 @@
   "setup_done":     "[완료] 설치 완료. 재시작합니다...",
   "setup_fail":     "[오류] 설치 실패. _setup.py를 직접 실행해주세요.",
 
-  "setup_header":                     "ZZZ HoyoLab 자동 출석체크 - 초기 설정",
+  "setup_header":                     "HoyoLab 자동 출석체크 - 초기 설정",
   "setup_label_python_path":          "Python 경로",
   "setup_label_python_version":       "Python 버전",
   "setup_err_python_too_old":         "Python 3.8 이상이 필요합니다. (현재: {ver})",
@@ -23,7 +23,7 @@
   "setup_err_prefix":                 "[오류]",
   "setup_download_label":             "다운로드",
 
-  "sched_header":                     "ZZZ HoyoLab 출석체크 - 작업 스케줄러 등록",
+  "sched_header":                     "HoyoLab 출석체크 - 작업 스케줄러 등록",
   "sched_menu_description":           "매일 자동으로 출석체크를 실행하도록 작업 스케줄러에 등록합니다.",
   "sched_menu_status_registered":     "현재 상태: [등록됨]",
   "sched_menu_status_not_registered": "현재 상태: [등록 안 됨]",
@@ -43,8 +43,19 @@
 
   "press_enter_to_exit":              "\n엔터를 눌러 종료...",
 
-  "title":          "젠레스 존 제로 자동 출석체크",
+  "title":          "HoyoLab 자동 출석체크",
   "run_time":       "실행 시각",
+
+  "game_select_title":   "출석체크할 게임을 선택하세요",
+  "game_name_zzz":       "젠레스 존 제로",
+  "game_name_hkrpg":     "붕괴: 스타레일",
+  "game_name_genshin":   "원신",
+  "game_name_nxx":       "미해결사건부",
+  "game_name_bh3":       "붕괴3rd",
+  "game_select_all":     "전체 선택/해제",
+  "game_select_nav":     "↑↓ 이동  |  Enter 토글/확인",
+  "game_select_confirm": "완료",
+  "game_checkin_start":  "\n── {name} ──────────────────────────",
 
   "sched_ask":         "매일 자동 실행을 등록하시겠습니까? (y/N): ",
   "sched_default_ask": "기본값(01:05)으로 등록할까요? (Y/n): ",
@@ -60,10 +71,11 @@
   "page_fail":      "[오류] 페이지 로딩 실패 — {err}",
   "status":         "[상태] 이번 달 출석 체크 {count}회 완료",
   "date_today":     "[날짜] UTC+8 기준 오늘: {day}일 차",
-  "already_done":   "[알림] {day}일 차 출석체크는 이미 완료되어 있습니다!",
+  "already_done":   "[알림] 오늘 출석체크가 이미 완료되어 있습니다!",
   "executing":      "[실행] {day}일 차 버튼 클릭...",
   "btn_not_found":  "[오류] '{day}일 차' 버튼을 찾을 수 없습니다.",
   "check_success":  "[성공] 출석체크 완료!",
+  "check_no_account": "[알림] 게임 계정이 연동되어 있지 않아 출석체크를 건너뜁니다.",
   "check_fail":     "[실패] 출석체크가 완료되지 않았습니다.\n       원인: 버튼 클릭 후 완료 신호 없음 (서버 오류 또는 네트워크 문제)",
 
   "login_guide1":   "[안내] 브라우저가 열립니다. HoyoLab에 로그인해주세요.",
@@ -78,7 +90,7 @@
 
   "session_exp":    "\n[세션 만료] {err}",
   "relogin":        "[재로그인] 브라우저를 열어 다시 로그인합니다...",
-  "retry_vis":      "\n[재시도] 브라우저를 열어서 다시 시도합니다...",
+  "retry_bg":       "[재시도] 백그라운드에서 다시 시도합니다... ({n}/3)",
   "final_fail":     "  [최종 실패] 출석체크를 완료하지 못했습니다.\n  가능한 원인:\n    1. 네트워크   → 인터넷 연결 확인\n    2. 서버 오류  → 잠시 후 수동으로 재실행",
 
   "interrupted":    "\n[중단] 사용자가 실행을 중단했습니다.",

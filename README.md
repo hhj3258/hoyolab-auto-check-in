@@ -78,6 +78,15 @@ If the saved session has expired, the browser opens automatically for re-login, 
 
 ---
 
+## Security & Privacy
+
+- **No credentials are stored.** The script never reads or saves your HoyoLab ID or password. Login is done manually through the official HoyoLab website in a real browser window.
+- **Session data stays on your machine.** The browser session (cookies) is saved locally in `data/browser_profile/` and is never transmitted anywhere.
+- **No external servers involved.** The script communicates only with HoyoLab directly, the same as using the website normally.
+- **Open source.** You can review every line of code in this repository.
+
+---
+
 ## Changing Language
 
 Delete `data/.lang` and the language selection prompt will appear on the next run.

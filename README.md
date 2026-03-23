@@ -1,45 +1,48 @@
-# 젠레스 존 제로 자동 출석체크
+# ZZZ HoyoLab Auto Check-in
 
-HoyoLab 젠레스 존 제로 출석체크를 자동으로 수행하는 스크립트입니다.
-한국어 / English / 日本語 지원.
+Automated HoyoLab daily check-in script for Zenless Zone Zero.
 
-## 요구사항
+[한국어](README.ko.md)
 
-- Python 3.8 이상
+## Requirements
+
+- Python 3.8+
 - Windows
 
-## 사용법
+## Usage
 
-**`run.bat` 하나로 모든 것을 처리합니다.**
+**`run.bat` handles everything in one step.**
 
-1. `run.bat` 실행
-2. 최초 1회: 언어 선택 → 미설치 패키지 자동 설치 → 로그인
-3. 이후 실행: 자동으로 헤드리스 출석체크 수행
+1. Run `run.bat`
+2. First run: select language → auto-install dependencies → log in to HoyoLab
+3. Subsequent runs: headless check-in performed automatically
 
-### 작업 스케줄러 등록
+### Task Scheduler
 
-최초 실행 시 매일 자동 실행 여부를 물어봅니다.
-나중에 변경하려면 `schedule.bat`을 실행하세요.
-등록 해제: `python _schedule.py delete`
+On first run, you will be asked whether to register a daily scheduled task.
+To change the schedule later, run `schedule.bat`.
+To unregister: `python scripts\_schedule.py delete`
 
-## 파일 구조
+## File Structure
 
 ```
-├── zzz_checkin.py   # 메인 스크립트 (설치 확인, 언어 선택, 출석체크)
-├── _setup.py        # 설치 스크립트 (playwright, Chromium)
-├── _schedule.py     # 작업 스케줄러 등록/해제
-├── run.bat          # 실행 파일 (단일 진입점)
-└── schedule.bat     # 스케줄러 수동 설정 파일
+├── run.bat               # Entry point
+├── schedule.bat          # Task scheduler management
+└── scripts/
+    ├── zzz_checkin.py    # Main script (setup check, language selection, check-in)
+    ├── _setup.py         # Dependency installer (Playwright, Chromium)
+    ├── _schedule.py      # Task scheduler registration / removal
+    └── locales/          # Locale strings (ko / en / ja)
 ```
 
-## 동작 방식
+## How It Works
 
-- Playwright를 이용해 Chromium 브라우저를 자동 조작합니다.
-- 로그인 정보는 `browser_profile/` 폴더에 저장되며 재사용합니다.
-- UTC+8(베이징 표준시) 기준으로 오늘 날짜의 출석 버튼을 클릭합니다.
-- 이미 완료된 경우 별도 조작 없이 종료합니다.
-- 세션 만료 시 자동으로 재로그인 플로우를 진행합니다.
+- Uses Playwright to automate a Chromium browser.
+- Login session is stored in `data/browser_profile/` and reused on subsequent runs.
+- Clicks the check-in button for today's date based on UTC+8 (HoyoLab server time).
+- Exits silently if check-in is already completed.
+- Re-login flow is triggered automatically if the session expires.
 
-## 언어 변경
+## Changing Language
 
-`.lang` 파일을 삭제하면 다음 실행 시 언어 선택 화면이 다시 나타납니다.
+Delete `data/.lang` and the language selection prompt will appear on the next run.

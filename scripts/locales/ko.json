@@ -24,6 +24,11 @@
   "setup_download_label":             "다운로드",
 
   "sched_header":                     "ZZZ HoyoLab 출석체크 - 작업 스케줄러 등록",
+  "sched_menu_description":           "매일 자동으로 출석체크를 실행하도록 작업 스케줄러에 등록합니다.",
+  "sched_menu_status_registered":     "현재 상태: [등록됨]",
+  "sched_menu_status_not_registered": "현재 상태: [등록 안 됨]",
+  "sched_menu_option_register":       "1. 등록   - 매일 자동 실행 설정",
+  "sched_menu_option_unregister":     "2. 해제   - 예약된 작업 제거",
   "sched_delete_starting":            "[삭제] '{name}' 작업을 해제합니다...",
   "sched_delete_not_registered":      "[안내] '{name}' 작업이 등록되어 있지 않습니다.",
   "sched_delete_done":                "[완료] 작업이 해제되었습니다.",

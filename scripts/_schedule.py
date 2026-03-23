@@ -71,6 +71,29 @@ def register_task(time_str: str) -> None:
     print(t["sched_hoyolab_reset_note"])
 
 
+# ── 메뉴 모드 ──────────────────────────────────────
+if len(sys.argv) > 1 and sys.argv[1] == "--menu":
+    is_registered = query_task().returncode == 0
+    print("=" * 50)
+    print(f"  {t['sched_header']}")
+    print("=" * 50)
+    print()
+    print(f"  {t['sched_menu_description']}")
+    print()
+    status = t["sched_menu_status_registered"] if is_registered else t["sched_menu_status_not_registered"]
+    print(f"  {status}")
+    print()
+    print(f"  {t['sched_menu_option_register']}")
+    print(f"  {t['sched_menu_option_unregister']}")
+    print()
+    choice = input("> ").strip()
+    if choice == "1":
+        sys.argv = [sys.argv[0]]
+    elif choice == "2":
+        sys.argv = [sys.argv[0], "delete"]
+    else:
+        sys.exit(0)
+
 # ── 삭제 모드 ──────────────────────────────────────
 if len(sys.argv) > 1 and sys.argv[1] == "delete":
     if query_task().returncode != 0:

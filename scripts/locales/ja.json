@@ -24,6 +24,11 @@
   "setup_download_label":             "ダウンロード",
 
   "sched_header":                     "ZZZ HoyoLab 出席チェック - タスクスケジューラ登録",
+  "sched_menu_description":           "毎日自動的に出席チェックを実行するようタスクスケジューラに登録します。",
+  "sched_menu_status_registered":     "現在の状態: [登録済み]",
+  "sched_menu_status_not_registered": "現在の状態: [未登録]",
+  "sched_menu_option_register":       "1. 登録   - 毎日の自動実行を設定",
+  "sched_menu_option_unregister":     "2. 解除   - スケジュールされたタスクを削除",
   "sched_delete_starting":            "[削除] '{name}' タスクを解除します...",
   "sched_delete_not_registered":      "[案内] '{name}' タスクは登録されていません。",
   "sched_delete_done":                "[完了] タスクが解除されました。",

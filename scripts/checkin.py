@@ -484,7 +484,18 @@ async def do_checkin(t: dict, headless: bool, game: dict) -> bool:
         try:
             await day_loc.click(timeout=5000)
         except Exception:
-            await day_loc.click(force=True)
+            # 타임아웃 시 Vue 이벤트 핸들러를 정상 트리거하는 JS 직접 클릭으로 폴백
+            await page.evaluate(
+                """([suffix, day]) => {
+                    const dayText = String(day) + suffix;
+                    const all = Array.from(document.querySelectorAll('*'));
+                    const dayEl = all.find(el =>
+                        el.children.length === 0 && el.textContent.trim() === dayText
+                    );
+                    if (dayEl) dayEl.click();
+                }""",
+                [day_suffix, target_day],
+            )
 
         # 0단계: 에러 토스트 (계정 미연동 등)
         try:

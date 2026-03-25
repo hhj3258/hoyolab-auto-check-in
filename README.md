@@ -64,10 +64,10 @@ Once detected, the session is saved and the browser closes automatically.
 
 ### Check-in
 1. Opens the HoyoLab check-in page for each selected game
-2. Determines today's date based on HoyoLab server time (UTC+8)
-3. Scrolls to today's reward card if needed
-4. Exits immediately if today's check-in is already done
-5. Clicks the card and confirms the check-in was successful
+2. Reads the number of check-ins completed this month to determine the next unchecked day
+3. Exits immediately if today's check-in is already done (verified via API response)
+4. Clicks the "Show More" button if the target day is beyond the initially visible cards
+5. Clicks the reward card and confirms the check-in was successful
 
 ### Session Expiry
 If the saved session has expired, the browser opens automatically for re-login, then the check-in is retried.

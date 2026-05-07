@@ -1,4 +1,5 @@
 CLAUDE.md
+.claude/
 data/browser_profile/
 data/.logged_in
 data/.lang

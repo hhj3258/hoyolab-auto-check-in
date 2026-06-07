@@ -38,6 +38,8 @@
   "sched_cancelled":                  "キャンセルしました。",
   "sched_recommend_time_note":        "HoyoLabはUTC+8の深夜にリセットされるため、KST 01:05以降を推奨します。",
   "sched_run_file_label":             "実行ファイル",
+  "sched_label_next_run":             "次の実行時刻",
+  "sched_label_status":               "状態",
   "sched_err_invalid_time":           "[エラー] 時刻の形式が正しくありません: '{time}'  (例: 01:05, 09:00)",
   "sched_hoyolab_reset_note":         "HoyoLabはUTC+8の深夜(KST 01:00)にリセットされます。",
 
@@ -84,6 +86,8 @@
   "login_waiting":  "[待機] ログイン待機中",
   "login_detected": "\n[検出] ログイン完了！",
   "login_saved":    "[保存] ログイン情報を保存しました！",
+  "login_closed":   "[案内] ログインが完了する前にブラウザが閉じられました。",
+  "login_timeout":  "[案内] 5分間ログインが完了せず、タイムアウトしました。",
   "login_warn":     "[警告] ログインを確認できませんでした。再試行します...",
   "login_fail":     "  [失敗] ログインに3回失敗しました。\n  スクリプトを再実行してください。",
   "retry_label":    "[再試行] {n}/3回目の試行...",

@@ -38,6 +38,8 @@
   "sched_cancelled":                  "취소했습니다.",
   "sched_recommend_time_note":        "HoyoLab은 UTC+8 자정에 초기화되므로 KST 기준 01:05 이후를 권장합니다.",
   "sched_run_file_label":             "실행 파일",
+  "sched_label_next_run":             "다음 실행 시간",
+  "sched_label_status":               "상태",
   "sched_err_invalid_time":           "[오류] 올바른 시간 형식이 아닙니다: '{time}'  (예: 01:05, 09:00)",
   "sched_hoyolab_reset_note":         "HoyoLab은 UTC+8 자정(KST 01:00)에 초기화됩니다.",
 
@@ -84,6 +86,8 @@
   "login_waiting":  "[대기] 로그인 대기 중",
   "login_detected": "\n[감지] 로그인 완료!",
   "login_saved":    "[저장] 로그인 정보가 저장되었습니다!",
+  "login_closed":   "[안내] 로그인이 완료되기 전에 브라우저가 닫혔습니다.",
+  "login_timeout":  "[안내] 5분 동안 로그인이 완료되지 않아 시간 초과되었습니다.",
   "login_warn":     "[경고] 로그인이 확인되지 않았습니다. 다시 시도합니다...",
   "login_fail":     "  [실패] 로그인에 3번 실패했습니다.\n  스크립트를 다시 실행해주세요.",
   "retry_label":    "[재시도] {n}/3번째 시도...",

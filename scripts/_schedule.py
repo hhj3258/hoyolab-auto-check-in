@@ -5,7 +5,7 @@ Windows 작업 스케줄러 등록/해제 스크립트
   python _schedule.py          → 작업 등록
   python _schedule.py delete   → 작업 해제
 """
-import json, subprocess, sys
+import csv, io, json, subprocess, sys
 from pathlib import Path
 from datetime import datetime
 
@@ -31,8 +31,11 @@ PAUSE = "--no-pause" not in sys.argv
 
 
 def query_task() -> subprocess.CompletedProcess:
+    # CSV 출력은 컬럼 순서가 OS 표시 언어와 무관하게 고정되므로
+    # 라벨 텍스트 매칭 없이 위치(인덱스)로 값을 읽을 수 있다.
+    # /nh: 헤더 행 제거(헤더는 번역됨)  /v: 다음 실행 시간·상태 컬럼 포함
     return subprocess.run(
-        ["schtasks", "/query", "/tn", TASK_NAME, "/fo", "LIST"],
+        ["schtasks", "/query", "/tn", TASK_NAME, "/fo", "CSV", "/nh", "/v"],
         capture_output=True, text=True, encoding="cp949",
     )
 
@@ -113,10 +116,11 @@ print()
 r = query_task()
 if r.returncode == 0:
     print(t["sched_already_registered_detail"].format(name=TASK_NAME))
-    for line in r.stdout.splitlines():
-        line = line.strip()
-        if any(k in line for k in ("다음 실행 시간", "Next Run Time", "次の実行時刻", "상태", "Status", "状態")):
-            print(f"       {line}")
+    # CSV verbose 컬럼: [0]호스트 [1]작업이름 [2]다음 실행 시간 [3]상태 ...
+    rows = list(csv.reader(io.StringIO(r.stdout)))
+    if rows and len(rows[0]) > 3:
+        print(f"       {t['sched_label_next_run']}: {rows[0][2]}")
+        print(f"       {t['sched_label_status']}: {rows[0][3]}")
     print()
     ans = input(t["sched_change_time_ask"]).strip().lower()
     if ans != "y":

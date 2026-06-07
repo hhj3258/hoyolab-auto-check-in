@@ -38,6 +38,8 @@
   "sched_cancelled":                  "Cancelled.",
   "sched_recommend_time_note":        "HoyoLab resets at UTC+8 midnight, so 01:05 KST or later is recommended.",
   "sched_run_file_label":             "Run file",
+  "sched_label_next_run":             "Next run time",
+  "sched_label_status":               "Status",
   "sched_err_invalid_time":           "[Error] Invalid time format: '{time}'  (e.g. 01:05, 09:00)",
   "sched_hoyolab_reset_note":         "HoyoLab resets at UTC+8 midnight (KST 01:00).",
 
@@ -84,6 +86,8 @@
   "login_waiting":  "[Wait] Waiting for login",
   "login_detected": "\n[Detected] Login complete!",
   "login_saved":    "[Saved] Login info saved!",
+  "login_closed":   "[Info] The browser was closed before login completed.",
+  "login_timeout":  "[Info] Login timed out after 5 minutes.",
   "login_warn":     "[Warning] Login not confirmed. Retrying...",
   "login_fail":     "  [Fail] Login failed 3 times.\n  Please restart the script.",
   "retry_label":    "[Retry] Attempt {n}/3...",

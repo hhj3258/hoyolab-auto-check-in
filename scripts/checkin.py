@@ -280,6 +280,8 @@ async def login_flow(t: dict) -> None:
                 pass
 
             print(t["login_no_close"])
+            browser_closed = False
+            timed_out = True  # 루프가 break 없이 완주하면 시간 초과
             for tick in range(600):
                 await asyncio.sleep(0.5)
                 dots = "." * (tick % 3 + 1)
@@ -287,10 +289,13 @@ async def login_flow(t: dict) -> None:
                 try:
                     cookies = await ctx.cookies()
                 except Exception:
+                    browser_closed = True
+                    timed_out = False
                     break
                 if any(c["name"] == "ltoken_v2" and c["value"] for c in cookies):
                     print(t["login_detected"])
                     login_ok = True
+                    timed_out = False
                     await asyncio.sleep(1)
                     break
             print()
@@ -304,6 +309,12 @@ async def login_flow(t: dict) -> None:
             LOGGED_IN.touch()
             print(t["login_saved"])
             return
+
+        # 실패 사유 구분: 브라우저 닫힘 vs 시간 초과
+        if browser_closed:
+            print(t["login_closed"])
+        elif timed_out:
+            print(t["login_timeout"])
 
         if attempt < 3:
             print(t["login_warn"])
